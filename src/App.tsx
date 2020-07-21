@@ -1,9 +1,16 @@
 import React from 'react';
 
-import Header from './components/Header';
+import GlobalStyle from './styles/global';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 
-function App() {
-  return <Header></Header>;
-}
+const App: React.FC = () => (
+  <>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes />
+      <GlobalStyle />
+    </BrowserRouter>
+  </>
+);
 
 export default App;
